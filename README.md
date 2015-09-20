@@ -6,7 +6,7 @@ CentOS7環境構築
 
 ## Requirement
 
-- Vagrant ~> 1.7.2
+- Vagrant ~> 1.7.4
 - Virtualbox >= 5
 - vagrant-vbguest  
 ```
