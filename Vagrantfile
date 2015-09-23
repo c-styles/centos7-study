@@ -13,15 +13,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.hostname = 'centos7-study'
 
-  # Set the version of chef to install using the vagrant-omnibus plugin
-  # NOTE: You will need to install the vagrant-omnibus plugin:
-  #
-  #   $ vagrant plugin install vagrant-omnibus
-  #
-  if Vagrant.has_plugin?("vagrant-omnibus")
-    config.omnibus.chef_version = 'latest'
-  end
-
   # Every Vagrant virtual environment requires a box to build off of.
   # If this value is a shorthand to a box in Vagrant Cloud then
   # config.vm.box_url doesn't need to be specified.
@@ -88,4 +79,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #   'recipe[centos7-study::default]'
   # ]
   # end
+  config.vm.provision "omnibus-chefdk", type: "shell" do |shell|
+    shell.privileged = true
+    shell.path = "./pre-provision/shells/omnibus-chefdk.sh"
+  end
 end
