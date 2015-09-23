@@ -87,4 +87,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     shell.privileged = true
     shell.path = "./pre-provision/shells/yum-security.sh"
   end
+  config.vm.provision "chef-setup", type: "shell" do |shell|
+    shell.privileged = false
+    shell.path = "./pre-provision/shells/chef-setup.sh"
+  end
 end
