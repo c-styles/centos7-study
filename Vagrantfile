@@ -91,4 +91,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     shell.privileged = false
     shell.path = "./pre-provision/shells/chef-setup.sh"
   end
+  config.vm.provision "chef-init", type: "shell" do |shell|
+    shell.privileged = false
+    shell.path = "./pre-provision/shells/chef-init.sh"
+  end
 end
