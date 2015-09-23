@@ -6,4 +6,4 @@ description      'Learning Material for CentOS7'
 long_description ''
 version          '0.1.0'
 
-depends          'git'
+depends          'mysql', '~> 6.0'
