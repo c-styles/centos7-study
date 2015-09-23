@@ -83,4 +83,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     shell.privileged = true
     shell.path = "./pre-provision/shells/omnibus-chefdk.sh"
   end
+  config.vm.provision "yum-security", type: "shell" do |shell|
+    shell.privileged = true
+    shell.path = "./pre-provision/shells/yum-security.sh"
+  end
 end
